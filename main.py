@@ -181,6 +181,14 @@
 #     visas_tekstas = failas.readlines()
 #     print(visas_tekstas)
 
+with open('./Miestai.txt') as failas:
+    teksto_eilute = failas.readline()
+with open('./Miestu_kopija.txt', 'w') as miestai:
+    miestai.write(teksto_eilute)
+# with open('./Miestu_kopija.txt', 'a') as miestai:
+#
+#     print(miestai)
+
 # with open('./Miestai.txt') as failas:
 #     visas_tekstas = failas.readlines()
 #     print('Visas tekstas: ', visas_tekstas)
@@ -257,15 +265,15 @@
 # failas.write('trecia\n')
 # failas.close()
 
-# with open('./rasymui6.txt', 'a') as failas:
-#     failas.write('labas krabas\t')
-# with open('./rasymui6.txt', 'a') as failas:
+# with open('./rasymui10.txt', 'w') as failas:
+#     failas.write('labas rytas\n')
+# with open('./rasymui10.txt', 'a') as failas:
 #     failas.write('daugiau teksto\n')
-# with open('./rasymui6.txt', 'a') as failas:
-#     failas.write('dar teksto\t')
-#     failas.write('ir dar daugiau')
-# with open('./rasymui6.txt', 'a') as failas:
-#      failas.write('i virsu teksto\n')
+# with open('./rasymui10.txt', 'a') as failas:
+#     failas.write('siek tiek kito teksto\n')
+# with open('./rasymui10.txt', 'r+') as failas: # istrina pirma eilute ir ant jos uzraso savo nauja teksta
+#     failas.write('dar teksto\n' * 2)
+#     failas.write('ir dar daugiau ' * 2)
 
 # with open('./rasymui7.txt', 'w') as failas:
 #     failas.write('tekstas')
@@ -274,22 +282,35 @@
 #     failas.seek(10)
 #     failas.write('na va')
 
-with open('./skaiciavimui.txt', 'w') as failas:
-    failas.write('cia bus skaiciai')
-with open('./skaiciavimui.txt', 'w') as failas:
-    a = 5+2
-    failas.write('abbbb')
-    # failas.seek(10)
-    failas.write('na va')
-
 
 # 514
 # 2. Pamėginkite išvesti skirtingą informaciją į keletą atskirų failų.
 # Tiek perrašant kas yra tame faile, tiek bandant jį papildyti.
 # Galite išvesti kokių nors skaičiavimų informaciją.
+# auksciau pavyzdziuose ta padariau (tik ne skaiciavimus...)
 
 # 3. Susikurkite duomenų failą, iš kurio nusiskaitytumėte informaciją apie automobilius.
-# Išskaičiuokite keletą norimų dalykų (pvz. metų vidurkį) ir skaičiavimų rezultatus išveskite rezultatų faile.
+# Išskaičiuokite keletą norimų dalykų (pvz. metų vidurkį)
+# ir skaičiavimų rezultatus išveskite rezultatų faile.
+zmones = []
+with open('./zmones.txt', encoding = 'utf8') as failas:
+    for eilute in failas:
+        eilute = eilute.rstrip('\n')
+        isskaidyta = eilute.split(';')
+        zmogus = dict(
+            vardas = isskaidyta[0],
+            pavarde = isskaidyta[1],
+            amzius = isskaidyta[2],
+            miestas = isskaidyta[3],
+            numeris = isskaidyta[4]
+        )
+        zmones.append(zmogus)
+# print(zmones)
+with open('./rezultatai.txt', 'w') as rezultatai:
+    amziai = []
+    for i in amzius:
+        amziai.append(isskaidyta)
+print(amziai)
 
 # 524
 # 4. Susikurkite pasirinktą csv failą ir užpildykite jį duomenimis.
