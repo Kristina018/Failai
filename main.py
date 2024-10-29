@@ -1,6 +1,7 @@
 ### --- 2024 spalio 21, pirmadienis --- 1. dalis --- C R U D --- ###
 ### --- 2024 spalio 21, pirmadienis --- 1. dalis --- C R U D --- ###
 ### --- 2024 spalio 21, pirmadienis --- 1. dalis --- C R U D --- ###
+from itertools import count
 
 # import datetime
 #
@@ -289,28 +290,28 @@ with open('./Miestu_kopija.txt', 'w') as miestai:
 # Galite išvesti kokių nors skaičiavimų informaciją.
 # auksciau pavyzdziuose ta padariau (tik ne skaiciavimus...)
 
-# 3. Susikurkite duomenų failą, iš kurio nusiskaitytumėte informaciją apie automobilius.
-# Išskaičiuokite keletą norimų dalykų (pvz. metų vidurkį)
-# ir skaičiavimų rezultatus išveskite rezultatų faile.
-zmones = []
-with open('./zmones.txt', encoding = 'utf8') as failas:
-    for eilute in failas:
-        eilute = eilute.rstrip('\n')
-        isskaidyta = eilute.split(';')
-        zmogus = dict(
-            vardas = isskaidyta[0],
-            pavarde = isskaidyta[1],
-            amzius = isskaidyta[2],
-            miestas = isskaidyta[3],
-            numeris = isskaidyta[4]
-        )
-        zmones.append(zmogus)
-# print(zmones)
-with open('./rezultatai.txt', 'w') as rezultatai:
-    amziai = []
-    for i in amzius:
-        amziai.append(isskaidyta)
-print(amziai)
+# # 3. Susikurkite duomenų failą, iš kurio nusiskaitytumėte informaciją apie automobilius.
+# # Išskaičiuokite keletą norimų dalykų (pvz. metų vidurkį)
+# # ir skaičiavimų rezultatus išveskite rezultatų faile.
+# zmones = []
+# with open('./zmones.txt', encoding = 'utf8') as failas:
+#     for eilute in failas:
+#         eilute = eilute.rstrip('\n')
+#         isskaidyta = eilute.split(';')
+#         zmogus = dict(
+#             vardas = isskaidyta[0],
+#             pavarde = isskaidyta[1],
+#             amzius = isskaidyta[2],
+#             miestas = isskaidyta[3],
+#             numeris = isskaidyta[4]
+#         )
+#         zmones.append(zmogus)
+# # print(zmones)
+# with open('./rezultatai.txt', 'w') as rezultatai:
+#     amziai = []
+#     for i in amzius:
+#         amziai.append(isskaidyta)
+# print(amziai)
 
 # 524
 # 4. Susikurkite pasirinktą csv failą ir užpildykite jį duomenimis.
@@ -331,3 +332,94 @@ print(amziai)
 # 7. Susikurkite norimą csv failą su duomenimis. Nuskaitykite šio failo duomenis pasirinktu būdu.
 # Atfiltruokite duomenis pagal pasirinktą kriterijų (pvz, visus studentus, kurių vidurkis didesnis nei 8)
 # ir šiuos atfiltruotus duomenis išspausdinkite į atskirą csv failą.
+
+# # 1. Sukurkite dictionary studento duomenims saugoti.
+# # Į šį dictionary sudėkite tokias savybes su reikšmėmis:
+# # vardas, pavardė, amžius, studijų programa, atsiskaitytų kreditų skaičius, pažymiai,
+# # amžius, ūgis, kelintame kurse mokosi, kurioje mokykloje mokosi.
+# # Šiuos duomenis galite grupuoti į vidinius dictionary arba visus išrašyti atskirai.
+# # Išveskite šią informaciją per vieną print(). Taip pat, pamėginkite išvesti atskirose
+# # eilutėse tris skirtingas pasirinktas savybes.
+#
+# studentas = {
+#     'vardas': 'Jonas',
+#     'pavardė': 'Jonauskas',
+#     'studijų_programa': 'Duomenu analitika',
+#     'atsiskaitytų_kreditų_skaičius': 5,
+#     'pažymiai': [9, 8, 10, 7, 9],
+#     'amžius': 23,
+#     'ūgis': 180,
+#     'kursas': 1,
+#     'mokykla': "VCS"
+# }
+# # print(studentas)
+# print(studentas['vardas'])
+# print(studentas['pažymiai'])
+# print(studentas['mokykla'])
+
+
+
+# # 2. Sukurkite dictionary informacijai apie filmą saugoti. Į šį dictionary sudėkite tokias savybes
+# # su reikšmėmis: pavadinimas, režisierius, biudžetas, kiek uždirbo pinigų po išleidimo, žanras,
+# # trukmė, išleidimo metai, aktorių sąrašas (masyvas su jų vardais ir pavardėmis).
+# # Išveskite šio dictionary informaciją. Paskaičiuokite ir išveskite šio filmo pelną
+# # (uždarbis - biudžetas). Išveskite kiek filme dalyvavo aktorių (jų kiekis).
+# # Paskaičiuokite kiek filmui yra metų (dabartinius metus tiesiog galite įrašyti rankomis
+# # arba panaudoti datetime.date.today().year funkciją, pačiame failo viršuje reikės nurodyti import datetime).
+#
+# import datetime
+# filmas = {
+#     'pavadinimas': 'Titanic',
+#     'režisierius': 'Režisierius',
+#     'biudžetas': 1000000,
+#     'uždarbis': 50000000,
+#     'žanras': 'drama',
+#     'trukmė': 201,
+#     'metai': 1997,
+#     'aktoriai': ["Kate Winslet", "Leonardo DiCaprio", "Trečias aktorius", "Antraplanis", "Trečiaplanis"],
+# }
+# # print(filmas)
+# print(f'Titaniko pelnas yra {filmas['uždarbis'] - filmas['biudžetas']}.')
+# print(f'Filme vaidino {len(filmas['aktoriai'])} aktoriai.')
+# print(f'Nuo pastatymo praėjo {datetime.date.today().year - filmas['metai']} metai.')
+
+# # 410 skaidre
+# # 8. Susikurkite du dictionary, dviejų studentų informacijai saugoti.
+# # Abiejuose dictionary sudėkite šias savybes su reikšmėmis:
+# # vardas ir pavardė, studijų programos pavadinimas, pažymiai.
+# # Raskite abiejų studentų pažymių vidurkius. Išveskite abiejų studentų informaciją,
+# # bei pažymių vidurkius. Raskite ir išveskite, kurio studento pažymių vidurkis yra didesnis ir
+# # išveskite jo vardą su pavarde.
+#
+# studentas1 = {
+#     'vardas': 'Jonas',
+#     'pavardė': 'Jonauskas',
+#     'studijų_programa': 'Duomenu analitika',
+#     'pažymiai': [9, 8, 10, 7, 9],
+# }
+#
+# studentas2 = {
+#     'vardas': 'Kostas',
+#     'pavardė': 'Kostauskas',
+#     'studijų_programa': 'Duomenu analitika',
+#     'pažymiai': [10, 7, 9, 6, 5],
+# }
+#
+# suma1 = 0
+# for i in studentas1['pažymiai']:
+#     suma1 += i
+# vidurkis1 = suma1 / len(studentas1['pažymiai'])
+#
+# suma2 = 0
+# for i in studentas2['pažymiai']:
+#     suma2 += i
+# vidurkis2 = suma2 / len(studentas2['pažymiai'])
+#
+# # print(studentas1)
+# print(f'Pirmo studento pažymių vidurkis yra {vidurkis1}, o antro - {vidurkis2}.')
+# print()
+#
+# if vidurkis2 > vidurkis1:
+#     print(f'Antro studento vidurkis {vidurkis2} yra didesnis uz pirmojo, kuris yra {vidurkis1}.')
+# else:
+#     print(f'Pirmo studento vidurkis {vidurkis1} yra didesnis uz pirmojo, kuris yra {vidurkis2}.')
