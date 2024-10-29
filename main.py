@@ -418,7 +418,8 @@ with open('./Miestu_kopija.txt', 'w') as miestai:
 # # print(studentas1)
 # print(f'Pirmo studento pažymių vidurkis yra {vidurkis1}, o antro - {vidurkis2}.')
 # print()
-#
+
+
 # if vidurkis2 > vidurkis1:
 #     print(f'Antro studento vidurkis {vidurkis2} yra didesnis uz pirmojo, kuris yra {vidurkis1}.')
 # else:
