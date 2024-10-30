@@ -383,6 +383,52 @@ with open('./Miestu_kopija.txt', 'w') as miestai:
 # print(f'Filme vaidino {len(filmas['aktoriai'])} aktoriai.')
 # print(f'Nuo pastatymo praėjo {datetime.date.today().year - filmas['metai']} metai.')
 
+# # 389 skaidre
+# 3. Sukurkite du dictionary dviejų knygų informacijai saugoti. Kiekviename dictionary nurodykite tokias savybes su
+# reikšmėmis: pavadinimas, autorius, žanras, kaina, puslapių kiekis, skyrių sąrašas (masyvas su pavadinimais),
+# išleidimo metai, ar knygą galima rasti knygynuose. Išveskite šių knygų informaciją. Išveskite kuri knyga plonesnė
+# (turi mažiau puslapių), bei kurioje knygoje yra daugiau skyrių. Paskaičiuokite, jeigu pigesnės knygos kainą
+# padvigintumėte, ar ji jau būtų brangesnė už kitą knygą?
+
+# # 390 skaidre
+# 4. Sukurkite tris dictionary prekių duomenims saugoti. Kiekviename dictionary sudėkite šias savybes su reikšmėmis:
+# pavadinimas, kaina, savikaina, kodas, turimas kiekis sandėlyje, siuntimui dėžės matmenys (x, y, z ašys).
+# Išveskite visų trijų prekių informaciją. Išveskite visų prekių kainas vienoje eilutėje (pirma prekė kainuoja - ...,
+# antra prekė kainuoja - ..., ir t.t.). Raskite ir išveskite kuri prekė yra brangiausia (jos pavadinimą ir kainą arba
+# visą rastos prekės informaciją). Raskite ir išveskite atskirose eilutėse kiekvienos prekės dėžės tūrį.
+# Raskite ir išveskite atskirose eilutėse kiekvienos prekės pelningumą ((kaina - savikaina) * kiekis sandėlyje).
+
+# # 391 skaidre
+# 5. Sukurkite dictionary automobilio duomenims saugoti. Į šį dictionary savybes su reikšmėmis sukelkite,
+# po to kai sukursite tuščią dictionary (14- as pavyzdys). Sudėkite šias savybes su reikšmėmis:
+# markė, modelis, rida, gamybos metai, spalva, darbinis tūris, ar daužta, ar parduodama.
+# Išveskite visą automobilio informaciją. Paskaičiuokite ir išveskite kiek automobiliui yra metų
+# (rankomis įrašykite dabartinius metus arba panaudokite datetime.date.today().year funkciją,
+# pačiame failo viršuje reikės nurodyti import datetime). Paskaičiuokite ir išveskite kiek
+# vidutiniškai per metus yra nuvažiavęs automobilis (jeigu viso nuvažiavo 300 kilometrų, o automobiliui yra 2 metai,
+# tai per metus vidutiniškai gaunasi 150 km.).
+
+# # 392 skaidre
+# 6. Sukurkite savo norimą dictionary(-us). Kiekviename sudėkite bent 5 savybes su reikšmėmis
+# (reikšmes galite įdėti ir atskirai). Išveskite informaciją. Pagalvokite ką dar galite su šiuo dictionary atlikti
+# (paskaičiuoti ir pan.) ir tai padarykite.
+
+# # # 410 skaidre
+# # 7. Susikurkite dictionary informacijai apie knygyną saugoti. Į šį dictionary sudėkite tokias
+# # savybes su reikšmėmis: pavadinimas, adresas, plotas (kv. m.), kiek turi knygų, darbo valandos,
+# # ar atidarytas. Išveskite šio knygyno dictionary raktus su reikšmėmis.
+# knygynas = {
+#     "pavadinimas": 'Knygynelis',
+#     "adresas": "Pylimo 16",
+#     "plotas": 135,
+#     "kiekis": 35000,
+#     "darbo valandos": [8, 22],
+#     "atidarytas": True
+# }
+# for raktas, value in knygynas.items():
+#     print (raktas, value)
+
+
 # # 410 skaidre
 # # 8. Susikurkite du dictionary, dviejų studentų informacijai saugoti.
 # # Abiejuose dictionary sudėkite šias savybes su reikšmėmis:
@@ -415,12 +461,123 @@ with open('./Miestu_kopija.txt', 'w') as miestai:
 #     suma2 += i
 # vidurkis2 = suma2 / len(studentas2['pažymiai'])
 #
-# # print(studentas1)
-# print(f'Pirmo studento pažymių vidurkis yra {vidurkis1}, o antro - {vidurkis2}.')
-# print()
-
-
 # if vidurkis2 > vidurkis1:
-#     print(f'Antro studento vidurkis {vidurkis2} yra didesnis uz pirmojo, kuris yra {vidurkis1}.')
+#     print(f'Vidurkis {vidurkis2} yra didesnis ir priklauso antram studentui:')
+#     print(f'{studentas2['vardas']} {studentas2['pavardė']}.')
 # else:
-#     print(f'Pirmo studento vidurkis {vidurkis1} yra didesnis uz pirmojo, kuris yra {vidurkis2}.')
+#     print(f'Vidurkis {vidurkis1} yra didesnis ir priklauso pirmam studentui:')
+#     print(f'{studentas1['vardas']} {studentas1['pavardė']}.')
+
+# # 411 skaidre
+# 9. Susikurkite dictionary, kuriame būtų nurodytos prekės ir turimi kiekiai, t.y.
+# raktas yra prekės pavadinimas ir reikšmė yra turimas prekės kiekis, o visa tai saugoma
+# viename dictionary (panašu į 29 pavyzdį). Išveskite visą turimą dictionary informaciją
+# gražiai suformatuotai, pvz: '- Prekės "Pieštukas" liko 132 vnt.'
+# ir tai padaryti atskirose eilutėse. Taip pat, raskite ir išveskite visų prekių
+# bendrą turimą kiekį (sudėti visus turimus kiekius), kiekių vidurkį
+# (kiek vidutiniškai turima prekių). O tos prekės kurios likę mažiausiai vienetų
+# išvesti pavadinimą ir kiekį.
+
+sumustiniai = dict(
+   batonas = 10,
+   sviestas = 12,
+   desra = 5.5,
+   suris = 0, # 8.3 - 8.4
+   pomidorai = 17.8,
+   plastikiniai_maiseliai = 1
+)
+for raktas, reiksme in sumustiniai.items():
+    print(f'Prekes \'{raktas}\' yra like {reiksme} vnt.')
+
+prekiu_suma = 0
+for reiksme in sumustiniai.values():
+    prekiu_suma += reiksme
+print(f'- Visu prekiu kiekis yra {prekiu_suma} vnt.')
+
+print(f'- Vidutiniskai prekiu kiekis yra {round(prekiu_suma/len(sumustiniai),2)}.')
+
+print(f'- Maziausiai vienetu turi preke \'{raktas}\', t.y. {min(sumustiniai.values())} vnt.')
+# minval = min(d.values())
+
+
+
+# # 412 skaidre
+# 10.Susikurkite dictionary darbuotojo informacijai saugoti. Nurodykite tokias savybes:
+# vardas ir pavardė, telefonas, profesija, etatas, atlyginimas. Taip pat, sukurkite dar vieną
+# darbuotojo dictionary, tačiau nenurodykite 1-os ar 2-ų savybių, pvz, praleiskite profesiją.
+# Parašykite tokią programą, kuri galėtų išsiaiškinti kurios(-ių) savybių nėra antrame dictionary,
+# kurios yra pirmame, pvz jeigu nėra profesijos, tai programa išsiaiškintų,
+# kad nėra nurodyta profesija antrame dictionary. Padarykite taip, kad vartotojas turėtų galimybę
+# suvesti trūkstamas savybes.
+
+# # 413 skaidre
+# 11.Kaimynystėje yra trys kepyklos, apie kiekvieną yra žinoma ši informacija:
+# pavadinimas; darbuotojų kiekis; adresas; praeitos savaitės iškeptų kepinių kiekiai
+# (sąrašas su 7-iais elementais, kur nurodyti atskiri kepinių kiekiai).
+# Susikurkite dictionaries kiekvienai kepyklai. Jeigu vienas kepinys parduodamas už 1.5 euro,
+# raskite kuri kepykla galėjo būti pelningiausia. Taip pat, išsiaiškinkite kiek vidutiniškai
+# kiekviena kepykla per dieną pagamina kepinių, raskite kurios kepyklos vidurkis mažiausias.
+
+# # 423 skaidre
+# 12.Susikurkite sąrašą, kuriame būtų saugomos skirtingos knygos (kaip dictionary elementai).
+# Apie kiekvieną knygą į atskirus knygų dictionary sudėkite norimą informaciją (bent 3 savybes).
+# Į list įdėkite bent 3 knygas. Visas šias knygas išsiveskite. Tuomet parodykite pirmą knygą.
+# Antros knygos kažkurią savybę.
+
+# # 423 skaidre
+# 13.Susikurkite sąrašą, kuriame būtų keletas prekių (kaip dictionary elementai) ir jį
+# užpildykite pasirinktais duomenimis. Išveskite visų prekių pavadinimus su kainomis
+# ir dar kokiais nors atributais atskirose eilutėse.
+
+# # 424 skaidre
+# 14.Susikurkite sąrašą, kuriame būtų saugoma informacija apie keletą automobilių
+# (kaip dictionary elementai) ir užpildykite jį pasirinktais duomenimis.
+# Išveskite kiekvieno automobilio pavadinimą, metus ir paskaičiuotą jo amžių
+# (dabartiniai metai - gamybos metai).
+
+# # 424 skaidre
+# 15.Susikurkite sąrašą, kuriame būtų saugoma keleto įmonių duomenys (kaip dictionary elementai)
+# ir jį užpildykite duomenimis. Išveskite kiekvienos įmonės informaciją atskirose eilutėse,
+# gražiai suformatuotai (sakinio pavidalu ar pan.). Taip pat, ką nors paskaičiuokite
+# iš turimų skaitinių duomenų (pvz.: vidutinis įmonės amžius, darbuotojų kiekis per visas įmones,
+# bendras pelnas, ar pan.).
+
+# # 425 skaidre
+# 16.Susikurkite sąrašą, kuriame būtų saugoma informacija apie skirtingas ligonines
+# (kaip dictionary elementai) ir užpildykite jį pasirinktais duomenimis.
+# Išveskite ligoninių pavadinimus su adresais skirtingose eilutėse.
+# Suskaičiuokite ką nors iš skaitinių jų duomenų, pvz.: bendrą lankytojų kiekį,
+# bendrą ar vidutinį darbuotojų kiekį, ar pan.
+
+# # 426 skaidre
+# 17.Susikurkite sąrašą, kuriame būtų saugoma informacija apie keletą studentų
+# (kaip dictionary elementai), kur apie kiekvieną studentą būtų žinoma ši informacija:
+# vardas ir pavardė, amžius, pažymiai, studijų programa, kursas. Kiekvieną studentą išveskite taip:
+# pirmoje eilutėje visi studento duomenys išskyrus jo pažymius, antroje eilutėje jo pažymiai,
+# trečioje jo pažymių vidurkis su prierašu 'pažymių vidurkis'.
+# Išvedus visus studentus dėkite brūkšnį (pvz.: -----) ir išveskite bendrą visų studentų pažymių
+# vidurkį.
+
+# # 427 skaidre
+# 18.Susikurkite parduotuvės dictionary, kuriame būtų ši informacija:
+# pavadinimas, adresas, darbuotojų kiekis, prekių sąrašas (kiekviena kaip dictionary elementas).
+# Apie kiekvieną prekę parduotuvėje žinoma ši informacija: pavadinimas; kodas; kaina; savikaina;
+# turimas kiekis. Išveskite parduotuvės bendrą informaciją, tuomet užrašą "prekės" ir
+# atskirose eilutėse turimas prekes su kuria nors jų informacija
+# (pvz.: pavadinimai, kainos ir turimi kiekiai). Galiausiai paskaičiuokite kiek iš viso parduotuvė
+# turi visų prekių (sudėkite jų kiekius). Raskite ir išveskite kurios prekės turima daugiausiai,
+# o kurios mažiausiai.
+
+# # 428 skaidre
+# 19.Sukurkite norimą sąrašą iš dictionary elementų su norimais duomenimis.
+# Atlikite išvedimus ir pasirinktus skaičiavimus.
+
+# # 440 skaidre
+# 20.Susikurkite vieną ar kelis objektus ir išmėginkite visus prieš tai pamatytus dict metodus
+# (clear, copy, update, fromkeys, pop, ...)
+
+
+# # 453 - TUPLES
+# 1. Susikurkite tuple iš studijų programos modulių pavadinimų. Atspausdinkite šiuos pavadinimus sąraše, prieš kiekvieną pavadinimą išvedant brūkšniuką. Raskite ilgiausią modulio pavadinimą.
+# # 453 - TUPLES
+# 2. Susikurkite tuple iš mėnesių pavadinimų. Susikurkite kitus tuples sezonams apibūdinti: žiema, pavasaris, vasara, ruduo. Panaudokite slicing [start:end], kad atitinkamus mėnesius sudėtumėte į atitinkamus sezonų tuples. Šį priskyrimą turite atlikti kuriant individualius sezonų tuples, kitaip išmes klaidą, kad jo negalite modifikuoti.
