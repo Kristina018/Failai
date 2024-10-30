@@ -527,26 +527,39 @@ with open('./Miestu_kopija.txt', 'w') as miestai:
 #
 #     return positions
 
-# # 412 skaidre
-# 10.Susikurkite dictionary darbuotojo informacijai saugoti. Nurodykite tokias savybes:
-# vardas ir pavardė, telefonas, profesija, etatas, atlyginimas. Taip pat, sukurkite dar vieną
-# darbuotojo dictionary, tačiau nenurodykite 1-os ar 2-ų savybių, pvz, praleiskite profesiją.
-# Parašykite tokią programą, kuri galėtų išsiaiškinti kurios(-ių) savybių nėra antrame dictionary,
-# kurios yra pirmame, pvz jeigu nėra profesijos, tai programa išsiaiškintų,
-# kad nėra nurodyta profesija antrame dictionary. Padarykite taip, kad vartotojas turėtų galimybę
-# suvesti trūkstamas savybes.
+# # # 412 skaidre
+# # 10.Susikurkite dictionary darbuotojo informacijai saugoti. Nurodykite tokias savybes:
+# # vardas ir pavardė, telefonas, profesija, etatas, atlyginimas. Taip pat, sukurkite dar vieną
+# # darbuotojo dictionary, tačiau nenurodykite 1-os ar 2-ų savybių, pvz, praleiskite profesiją.
+# # Parašykite tokią programą, kuri galėtų išsiaiškinti kurios(-ių) savybių nėra antrame dictionary,
+# # kurios yra pirmame, pvz jeigu nėra profesijos, tai programa išsiaiškintų,
+# # kad nėra nurodyta profesija antrame dictionary. Padarykite taip, kad vartotojas turėtų galimybę
+# # suvesti trūkstamas savybes.
+#
+# darbuotojai = [
+#     dict( vardas = 'Gitanas', pavarde = 'Nauseda', telefonas = 860000001,
+#           profesija = 'Prezidentas', etatas = 1, atlyginimas = 10000),
+#     dict( vardas='Ingrida', pavarde='', telefonas=860000002, profesija='Premjere', etatas=1, atlyginimas=9000)
+#     ]
+# # for d in darbuotojai:
+# #     for v in d:
+# #         print(d[v])
+#
+# for d in darbuotojai:
+#     for v in d:
+#         if d[v] != '':
+#             print(v)
+#     # if darbuotojai[1]['pavarde'] == True)
+#
+# # for i in darbuotojai:
+# #     print(i)
+#
+# # for darbuotojas in darbuotojai:
+# #     print(f'- {darbuotojas['profesija']} {darbuotojas['vardas']} {darbuotojas['pavarde']}: '
+# #           f'tel. {darbuotojas['telefonas']}, '
+# #           f'gauna {darbuotojas['atlyginimas']} € algos uz {darbuotojas['etatas']} etata.')
 
-darbuotojai = [
-    dict( vardas = 'Gitanas', pavarde = 'Nauseda', telefonas = 860000001,
-          profesija = 'Prezidentas', etatas = 1, atlyginimas = 10000),
-    dict(vardas='Ingrida', telefonas=860000002,
-         profesija='Premjere', etatas=1, atlyginimas=9000),
-    dict( vardas = 'Arunas', pavarde = 'Paulauskas', telefonas = 860000112,
-          profesija = 'Komisaras', etatas = 1, atlyginimas = 6000)
-    ]
 
-for i in darbuotojai:
-    print(i)
 
 
 # # 413 skaidre
@@ -557,11 +570,51 @@ for i in darbuotojai:
 # raskite kuri kepykla galėjo būti pelningiausia. Taip pat, išsiaiškinkite kiek vidutiniškai
 # kiekviena kepykla per dieną pagamina kepinių, raskite kurios kepyklos vidurkis mažiausias.
 
+# kepykla1 = {
+#     'pavadinimas': "Obelele",
+#     'darbuotojų kiekis': 5,
+#     'adresas': 'Obelu 1',
+#     'praeita savaite iskepe': [1, 2, 3, 5, 10, 15, 30]
+# }
+# print(kepykla1)
+#
+# kepykla2 = {
+#     'pavadinimas': "Aguonele",
+#     'darbuotojų kiekis': 52,
+#     'adresas': 'Aguonu 2',
+#     'praeita savaite iskepe': [12, 24, 31, 59, 120, 195, 300]
+# }
+# print(kepykla2)
+#
+# kepykla3 = {
+#     'pavadinimas': "Citrinele",
+#     'darbuotojų kiekis': 35,
+#     'adresas': 'Citrinu 3',
+#     'praeita savaite iskepe': [34, 9, 16, 42, 111, 85, 150]
+# }
+# print(kepykla3)
+#
+# kepinys = 1.5
+
+
+
 # # 423 skaidre
 # 12.Susikurkite sąrašą, kuriame būtų saugomos skirtingos knygos (kaip dictionary elementai).
 # Apie kiekvieną knygą į atskirus knygų dictionary sudėkite norimą informaciją (bent 3 savybes).
 # Į list įdėkite bent 3 knygas. Visas šias knygas išsiveskite. Tuomet parodykite pirmą knygą.
 # Antros knygos kažkurią savybę.
+knygos = [
+    dict(autorius = "Markas Tvenas", knyga = "Tomo Sojerio nuotykiai", metai = 1876, salis='JAV'),
+    dict(autorius="Astrid Lindgren", knyga="Pepe Ilgakojine", metai=1945, salis='Svedija'),
+    dict(autorius="Isaac Asimov", knyga="Fondas", metai=1951, salis='JAV')
+]
+for i in knygos:
+    print(i)
+print(f'Pirmoji knyga: {knygos[0]}.')
+print(f'Antros knygos salis: {knygos[1]['salis']}.')
+x = knygos[0].keys()
+print(x)
+
 
 # # 423 skaidre
 # 13.Susikurkite sąrašą, kuriame būtų keletas prekių (kaip dictionary elementai) ir jį
@@ -616,7 +669,67 @@ for i in darbuotojai:
 # (clear, copy, update, fromkeys, pop, ...)
 
 
-# # 453 - TUPLES
-# 1. Susikurkite tuple iš studijų programos modulių pavadinimų. Atspausdinkite šiuos pavadinimus sąraše, prieš kiekvieną pavadinimą išvedant brūkšniuką. Raskite ilgiausią modulio pavadinimą.
-# # 453 - TUPLES
-# 2. Susikurkite tuple iš mėnesių pavadinimų. Susikurkite kitus tuples sezonams apibūdinti: žiema, pavasaris, vasara, ruduo. Panaudokite slicing [start:end], kad atitinkamus mėnesius sudėtumėte į atitinkamus sezonų tuples. Šį priskyrimą turite atlikti kuriant individualius sezonų tuples, kitaip išmes klaidą, kad jo negalite modifikuoti.
+# # # 453 - TUPLES
+# # 1. Susikurkite tuple iš studijų programos modulių pavadinimų.
+# # Atspausdinkite šiuos pavadinimus sąraše, prieš kiekvieną pavadinimą išvedant brūkšniuką.
+# # Raskite ilgiausią modulio pavadinimą.
+#
+# tuple1 = ('Duomenys', 'Analitika', 'Programavimas')
+#
+# for i in tuple1:
+#     print(f'- {i} -')
+#
+# max = len(tuple1[0])
+# for i in tuple1:
+#     if len(i) > max:
+#         max = len(i)
+# print(f'Ilgiausia modulio pavadinima turi \'{i}\': {len(i)} zenklu!')
+
+# # 453 skaidre - TUPLES
+# 2. Susikurkite tuple iš mėnesių pavadinimų. Susikurkite kitus tuples sezonams apibūdinti:
+# žiema, pavasaris, vasara, ruduo. Panaudokite slicing [start:end], kad atitinkamus mėnesius sudėtumėte
+# į atitinkamus sezonų tuples. Šį priskyrimą turite atlikti kuriant individualius sezonų tuples,
+# kitaip išmes klaidą, kad jo negalite modifikuoti.
+
+# menesiai = ('Kovas', 'Balandis', 'Geguze', 'Birzelis', 'Liepa', 'Rugpjutis',
+#             'Rugsejis', 'Spalis', 'Lapkritis', 'Gruodis', 'Sausis', 'Vasaris')
+# menesiai2 = ('Sausis', 'Vasaris', 'Kovas', 'Balandis', 'Geguze', 'Birzelis',
+#             'Liepa', 'Rugpjutis', 'Rugsejis', 'Spalis', 'Lapkritis', 'Gruodis')
+#
+# pavasaris = (menesiai[0:3])
+# print(pavasaris)
+#
+# pavasaris2 = (menesiai[0:2], menesiai[11])
+# print(pavasaris2)
+
+# Rasos:
+# winter = menesiai2[-1:] + menesiai2[0:2]
+# print(winter)
+
+# vasara = tuple(menesiai[3:6])
+# ruduo = (menesiai[6:9])
+# ziema = tuple(menesiai[9:12])
+#
+# print(vasara)
+# print(ruduo)
+# print(ziema)
+
+# # Rolando sprendimas:
+# menesiai = ('sausis', 'vasaris', 'kovas',
+# 'balandis', 'geguze', 'birzelis', 'liepa',
+# 'rugpjutis', 'rugsejis', 'spalis', 'lapkritis',
+# 'gruodis')
+#
+# print(f'Spring: {menesiai[2:5]}')
+# print(f'Summer: {menesiai[5:8]}')
+# print(f'Autumn: {menesiai[8:11]}')
+# print(f'Winter: {menesiai[11:12] + menesiai[0:2]}')
+
+# # 478 skaidre --- SETS
+# 1. Įsivaizduokite, kad sukūrėte balsavimo formą, kurioje žmogus galėjo rinktis 1 iš kelių galimų variantų
+# (ar įrašyti savo) ir turite sąraše visus tuos balsavimo duomenis (pvz: balsavimui panaudotas klausimas
+# “labiausiai patinkanti kalba:”,oatsakymai[‘c++’, ‘python’, ‘python’, ‘javascript’, ‘python’, ‘c#’, ‘javascript’]).
+# Atrinkite visus skirtingus atsakymų variantus į atskirą sąrašą (būtų [‘c++’, ‘python’, ‘javascript’, ‘c#’]).
+
+# # 478 skaidre --- SETS
+# 2. Savo nuožiūra atlikite dar bent vieną analogišką užduotį.
