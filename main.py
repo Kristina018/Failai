@@ -478,28 +478,54 @@ with open('./Miestu_kopija.txt', 'w') as miestai:
 # (kiek vidutiniškai turima prekių). O tos prekės kurios likę mažiausiai vienetų
 # išvesti pavadinimą ir kiekį.
 
-sumustiniai = dict(
-   batonas = 10,
-   sviestas = 12,
-   desra = 5.5,
-   suris = 0, # 8.3 - 8.4
-   pomidorai = 17.8,
-   plastikiniai_maiseliai = 1
-)
-for raktas, reiksme in sumustiniai.items():
-    print(f'Prekes \'{raktas}\' yra like {reiksme} vnt.')
+# sumustiniai = dict(
+#    batonas = 10,
+#    sviestas = 12,
+#    desra = 8.5,
+#    suris = 8.3, # 8.3 - 8.4
+#     antras_suris = 9,
+#    pomidorai = 17.8,
+#    plastikiniai_maiseliai = 2
+# )
+# for raktas, reiksme in sumustiniai.items():
+#     print(f'Prekes \'{raktas}\' yra like {reiksme} vnt.')
+#
+# prekiu_suma = 0
+# for reiksme in sumustiniai.values():
+#     prekiu_suma += reiksme
+# print(f'- Visu prekiu kiekis yra {prekiu_suma} vnt.')
+#
+# print(f'- Vidutiniskai prekiu kiekis yra {round(prekiu_suma/len(sumustiniai),2)} vieneto.')
+#
+# # print(f'- Maz vienetu yra {min(sumustiniai.values())} vnt. sios prekes: {sumustiniai.keys()}.')
+#
+#
+# positions = [] # output variable
+# min_value = float("inf")
+# for k, v in sumustiniai.items():
+#     if v == min_value:
+#         positions.append(k)
+#     if v < min_value:
+#         min_value = v
+#         positions = [] # output variable
+#         positions.append(k)
+# # print(positions)
+#
+# for i in positions:
+#     print(f'- Maziausiai prekiu turi \'{i}\' - {min_value} vnt.')
 
-prekiu_suma = 0
-for reiksme in sumustiniai.values():
-    prekiu_suma += reiksme
-print(f'- Visu prekiu kiekis yra {prekiu_suma} vnt.')
-
-print(f'- Vidutiniskai prekiu kiekis yra {round(prekiu_suma/len(sumustiniai),2)}.')
-
-print(f'- Maziausiai vienetu turi preke \'{raktas}\', t.y. {min(sumustiniai.values())} vnt.')
-# minval = min(d.values())
-
-
+# def minimums(some_dict):
+#     positions = [] # output variable
+#     min_value = float("inf")
+#     for k, v in some_dict.items():
+#         if v == min_value:
+#             positions.append(k)
+#         if v < min_value:
+#             min_value = v
+#             positions = [] # output variable
+#             positions.append(k)
+#
+#     return positions
 
 # # 412 skaidre
 # 10.Susikurkite dictionary darbuotojo informacijai saugoti. Nurodykite tokias savybes:
@@ -509,6 +535,19 @@ print(f'- Maziausiai vienetu turi preke \'{raktas}\', t.y. {min(sumustiniai.valu
 # kurios yra pirmame, pvz jeigu nėra profesijos, tai programa išsiaiškintų,
 # kad nėra nurodyta profesija antrame dictionary. Padarykite taip, kad vartotojas turėtų galimybę
 # suvesti trūkstamas savybes.
+
+darbuotojai = [
+    dict( vardas = 'Gitanas', pavarde = 'Nauseda', telefonas = 860000001,
+          profesija = 'Prezidentas', etatas = 1, atlyginimas = 10000),
+    dict(vardas='Ingrida', telefonas=860000002,
+         profesija='Premjere', etatas=1, atlyginimas=9000),
+    dict( vardas = 'Arunas', pavarde = 'Paulauskas', telefonas = 860000112,
+          profesija = 'Komisaras', etatas = 1, atlyginimas = 6000)
+    ]
+
+for i in darbuotojai:
+    print(i)
+
 
 # # 413 skaidre
 # 11.Kaimynystėje yra trys kepyklos, apie kiekvieną yra žinoma ši informacija:
