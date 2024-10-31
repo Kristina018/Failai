@@ -182,10 +182,11 @@ from itertools import count
 #     visas_tekstas = failas.readlines()
 #     print(visas_tekstas)
 
-with open('./Miestai.txt') as failas:
-    teksto_eilute = failas.readline()
-with open('./Miestu_kopija.txt', 'w') as miestai:
-    miestai.write(teksto_eilute)
+# with open('./Miestai.txt') as failas:
+#     teksto_eilute = failas.readline()
+# with open('./Miestu_kopija.txt', 'w') as miestai:
+#     miestai.write(teksto_eilute)
+
 # with open('./Miestu_kopija.txt', 'a') as miestai:
 #
 #     print(miestai)
@@ -527,37 +528,81 @@ with open('./Miestu_kopija.txt', 'w') as miestai:
 #
 #     return positions
 
-# # # 412 skaidre
-# # 10.Susikurkite dictionary darbuotojo informacijai saugoti. Nurodykite tokias savybes:
-# # vardas ir pavardė, telefonas, profesija, etatas, atlyginimas. Taip pat, sukurkite dar vieną
-# # darbuotojo dictionary, tačiau nenurodykite 1-os ar 2-ų savybių, pvz, praleiskite profesiją.
-# # Parašykite tokią programą, kuri galėtų išsiaiškinti kurios(-ių) savybių nėra antrame dictionary,
-# # kurios yra pirmame, pvz jeigu nėra profesijos, tai programa išsiaiškintų,
-# # kad nėra nurodyta profesija antrame dictionary. Padarykite taip, kad vartotojas turėtų galimybę
-# # suvesti trūkstamas savybes.
-#
-# darbuotojai = [
-#     dict( vardas = 'Gitanas', pavarde = 'Nauseda', telefonas = 860000001,
-#           profesija = 'Prezidentas', etatas = 1, atlyginimas = 10000),
-#     dict( vardas='Ingrida', pavarde='', telefonas=860000002, profesija='Premjere', etatas=1, atlyginimas=9000)
-#     ]
-# # for d in darbuotojai:
-# #     for v in d:
-# #         print(d[v])
-#
+# # 412 skaidre
+# 10.Susikurkite dictionary darbuotojo informacijai saugoti. Nurodykite tokias savybes:
+# vardas ir pavardė, telefonas, profesija, etatas, atlyginimas. Taip pat, sukurkite dar vieną
+# darbuotojo dictionary, tačiau nenurodykite 1-os ar 2-ų savybių, pvz, praleiskite profesiją.
+# Parašykite tokią programą, kuri galėtų išsiaiškinti kurios(-ių) savybių nėra antrame dictionary,
+# kurios yra pirmame, pvz jeigu nėra profesijos, tai programa išsiaiškintų,
+# kad nėra nurodyta profesija antrame dictionary. Padarykite taip, kad vartotojas turėtų galimybę
+# suvesti trūkstamas savybes.
+
+employee1 = {
+    'name': 'Gitanas',
+    'surname': 'Nauseda',
+    'phone': 860000001,
+    'profession': 'President',
+    'salary': 10000
+}
+employee2 = {
+    'name': 'Ingrida',
+    'phone': 860000002,
+}
+print(employee1)
+print(employee2)
+
+z = set(employee1) - set(employee2)
+print(f'Toks yra skirtumas tarp raktu: {z}.')
+
+for i in z:
+    employee2[i] = input(f'Iveskite reiksme raktui \'{i}\': ')
+    employee2.update({i: employee2[i]})
+# print(employee2)
+
+# print(employee1)
+# print(employee2)
+
+a = employee1.values()
+b = employee2.values()
+
+print(a)
+print(b)
+
+
+# x = employee2.keys()
+# print(x) #before the change
+# employee2["color"] = "white"
+# print(x) #after the change
+# print(employee2)
+
+# keys1 = employee1.keys()
+# print(keys1)
+# keys2 = employee2.keys()
+# print(keys2)
+
+# x = employee2["salary"]
+# print(x)
+# y = employee2.get("salary")
+# print(y)
+
+
 # for d in darbuotojai:
+#     for v in d:
+#         print(d[v])
+
+# for d in darbuotojai: # sprendimukas jei zodynai yra liste:
 #     for v in d:
 #         if d[v] != '':
 #             print(v)
-#     # if darbuotojai[1]['pavarde'] == True)
-#
-# # for i in darbuotojai:
-# #     print(i)
-#
-# # for darbuotojas in darbuotojai:
-# #     print(f'- {darbuotojas['profesija']} {darbuotojas['vardas']} {darbuotojas['pavarde']}: '
-# #           f'tel. {darbuotojas['telefonas']}, '
-# #           f'gauna {darbuotojas['atlyginimas']} € algos uz {darbuotojas['etatas']} etata.')
+    # if darbuotojai[1]['pavarde'] == True)
+
+# for i in darbuotojai:
+#     print(i)
+
+# for darbuotojas in darbuotojai:
+#     print(f'- {darbuotojas['profesija']} {darbuotojas['vardas']} {darbuotojas['pavarde']}: '
+#           f'tel. {darbuotojas['telefonas']}, '
+#           f'gauna {darbuotojas['atlyginimas']} € algos uz {darbuotojas['etatas']} etata.')
 
 
 
@@ -598,22 +643,22 @@ with open('./Miestu_kopija.txt', 'w') as miestai:
 
 
 
-# # 423 skaidre
-# 12.Susikurkite sąrašą, kuriame būtų saugomos skirtingos knygos (kaip dictionary elementai).
-# Apie kiekvieną knygą į atskirus knygų dictionary sudėkite norimą informaciją (bent 3 savybes).
-# Į list įdėkite bent 3 knygas. Visas šias knygas išsiveskite. Tuomet parodykite pirmą knygą.
-# Antros knygos kažkurią savybę.
-knygos = [
-    dict(autorius = "Markas Tvenas", knyga = "Tomo Sojerio nuotykiai", metai = 1876, salis='JAV'),
-    dict(autorius="Astrid Lindgren", knyga="Pepe Ilgakojine", metai=1945, salis='Svedija'),
-    dict(autorius="Isaac Asimov", knyga="Fondas", metai=1951, salis='JAV')
-]
-for i in knygos:
-    print(i)
-print(f'Pirmoji knyga: {knygos[0]}.')
-print(f'Antros knygos salis: {knygos[1]['salis']}.')
-x = knygos[0].keys()
-print(x)
+# # # 423 skaidre
+# # 12.Susikurkite sąrašą, kuriame būtų saugomos skirtingos knygos (kaip dictionary elementai).
+# # Apie kiekvieną knygą į atskirus knygų dictionary sudėkite norimą informaciją (bent 3 savybes).
+# # Į list įdėkite bent 3 knygas. Visas šias knygas išsiveskite. Tuomet parodykite pirmą knygą.
+# # Antros knygos kažkurią savybę.
+# knygos = [
+#     dict(autorius = "Markas Tvenas", knyga = "Tomo Sojerio nuotykiai", metai = 1876, salis='JAV'),
+#     dict(autorius="Astrid Lindgren", knyga="Pepe Ilgakojine", metai=1945, salis='Svedija'),
+#     dict(autorius="Isaac Asimov", knyga="Fondas", metai=1951, salis='JAV')
+# ]
+# for i in knygos:
+#     print(i)
+# print(f'Pirmoji knyga: {knygos[0]}.')
+# print(f'Antros knygos salis: {knygos[1]['salis']}.')
+# # x = knygos[0].keys() # isspausdina raktus
+# # print(x)
 
 
 # # 423 skaidre
